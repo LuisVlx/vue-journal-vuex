@@ -43,16 +43,16 @@ export default {
         const { loginUser } = useAuth()
 
         const userForm = ref({
-            email: 'michi@gmail.com',
-            password: 'supermichi',
+            email: '',
+            password: '',
         })
 
         return{
             userForm,
 
             onSubmit: async() => {
-
-                const {ok, message} = await loginUser(userForm.value)
+                
+                const { ok, message } = await loginUser(userForm.value)
 
                 if(ok){
                     router.push({ name: 'no-entry'}) 
